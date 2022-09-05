@@ -18,6 +18,7 @@ public class HomePage extends BasePage{
     private static final By BIKES_LINK = By.xpath("//a[text()='Bikes']");
     private static final By DAILY_VITALS_MENU = By.xpath("//a[text()='Daily Vitals']");
     private static final By VIEW_ADD_VITALS_LINK = By.xpath("//a[text()='View & Add Vitals']");
+    private static final By REPORTS_STATISTICS_LINK = By.xpath("//a[text()='Reports & Statistics']");
     Actions action = new Actions(driver);
     public HomePage(WebDriver driver) {
         super(driver);
@@ -65,6 +66,14 @@ public class HomePage extends BasePage{
         driver.findElement(ADD_WORKOUT_BUTTON).click();
 
     }
+
+    @Step("Clicking 'Reports & Statistics' link")
+    public void clickReportsAndStatistics() {
+        moveToWorkoutsMenu();
+        log.info("clicking 'Reports & Statistics' link");
+        clickButton(REPORTS_STATISTICS_LINK);
+    }
+
     @Step("Moving to 'Gear & Routes' menu")
     public void moveGearRoutesMenu() {
         log.info("moving to 'Gear & Routes' menu");

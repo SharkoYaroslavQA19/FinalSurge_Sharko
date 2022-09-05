@@ -7,8 +7,7 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test(groups={"smoke"})
-    @Description("authorization on the site")
+    @Test(groups={"smoke"},description = "authorization on the site")
     public void positiveLoginTest(){
         LoginPage.setEmailInput(EMAIL);
         LoginPage.setPasswordInput(PASSWORD);
@@ -16,8 +15,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(HomePage.isUserIconDisplayed());
     }
 
-    @Test(groups = {"negative"}, dataProvider = "getNegativeLoginData")
-    @Description("Authorization with incorrect email")
+    @Test(groups = {"negative"}, dataProvider = "getNegativeLoginData",description = "Authorization with incorrect email")
     public void negativeLoginTest(String email, String password,String errorMessage) {
         LoginPage.setEmailInput(email);
         LoginPage.setPasswordInput(password);

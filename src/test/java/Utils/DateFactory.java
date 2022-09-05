@@ -23,7 +23,7 @@ public class DateFactory {
         return Bike.builder()
                 .bikeName(faker.name().title())
                 .bikeBrand(BikeBrand.BMC)
-                .model(String.valueOf(faker.number().randomNumber()))
+                .model(String.valueOf(faker.name().name()))
                 .cost("600.00")
                 .date("11/20/2022")
                 .distance("60.15")

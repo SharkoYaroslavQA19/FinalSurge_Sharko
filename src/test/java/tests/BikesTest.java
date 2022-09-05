@@ -3,6 +3,7 @@ package tests;
 import Utils.DateFactory;
 import io.qameta.allure.Description;
 import models.Bike;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.BikesPage;
@@ -21,13 +22,13 @@ public class BikesTest extends BaseTest {
         LoginPage.setEmailInput(EMAIL);
         LoginPage.setPasswordInput(PASSWORD);
         LoginPage.clickLoginButton();
+        Assert.assertTrue(HomePage.isUserIconDisplayed());
         BikesPage = new BikesPage(driver);
         BikeModal = new BikeModal(driver);
     }
 
 
-    @Test(groups = {"Smoke"})
-    @Description(value = "Adding 'New bike' equipment and verifying equipment details")
+    @Test(groups = {"Smoke"},description = "Adding 'New bike' equipment and verifying equipment details")
     public void addNewBikeTest() {
         HomePage.moveGearRoutesMenu();
         HomePage.clickBikes();

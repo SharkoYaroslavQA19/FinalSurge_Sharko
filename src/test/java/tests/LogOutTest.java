@@ -7,8 +7,7 @@ import org.testng.annotations.Test;
 public class LogOutTest extends BaseTest{
     protected String EXPECTED_MESSAGE="You have been successfully logged out of the system.";
 
-    @Test(groups={"regression"})
-    @Description("Logout user")
+    @Test(groups={"regression"},description = "Logout user")
     public void logOutTest(){
         LoginPage.setEmailInput(EMAIL);
         LoginPage.setPasswordInput(PASSWORD);

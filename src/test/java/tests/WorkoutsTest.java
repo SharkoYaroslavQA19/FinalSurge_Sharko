@@ -25,8 +25,7 @@ public class WorkoutsTest extends BaseTest {
         WorkoutDetailsPage = new WorkoutDetailsPage(driver);
     }
 
-    @Test(groups = {"Smoke"})
-    @Description(value = "Adding Cross Training workout and verifying workout details")
+    @Test(groups = {"Smoke"},description = "Adding Cross Training workout and verifying workout details")
     public void addStrengthTrainingTest() {
         HomePage.clickAddWorkout();
         Assert.assertTrue(WorkoutsPage.isPageOpened());

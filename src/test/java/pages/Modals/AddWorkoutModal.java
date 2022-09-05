@@ -7,7 +7,7 @@ import elements.RadioButton;
 import models.Workout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.WorkoutDetailsPage;
+
 
 public class AddWorkoutModal extends BaseModal{
 

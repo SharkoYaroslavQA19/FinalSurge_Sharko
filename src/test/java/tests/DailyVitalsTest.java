@@ -3,6 +3,7 @@ package tests;
 import Utils.DateFactory;
 import io.qameta.allure.Description;
 import models.DatePeriod;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.DailyVitalsPage;
@@ -20,14 +21,14 @@ public class DailyVitalsTest extends BaseTest {
         LoginPage.setEmailInput(EMAIL);
         LoginPage.setPasswordInput(PASSWORD);
         LoginPage.clickLoginButton();
-        HomePage.clickViewAddVitals();
+        Assert.assertTrue(HomePage.isUserIconDisplayed());
         DailyVitalsPage = new DailyVitalsPage(driver);
         CustomViewModal = new CustomViewModal(driver);
     }
 
-    @Test(groups = {"Regression"})
-    @Description(value = "Displaying daily vitals for the selected time period")
+    @Test(groups = {"Regression"},description = "Displaying daily vitals for the selected time period")
     public void viewVitalsTest() {
+        HomePage.clickViewAddVitals();
         DatePeriod periodForView = DateFactory.getDatePeriod();
         DailyVitalsPage.clickCustomView().fillForm(periodForView).clickViewButton();
         assertEquals(DailyVitalsPage.getLastDateInTable(), periodForView.getEndDate());
