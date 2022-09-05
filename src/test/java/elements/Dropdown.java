@@ -17,10 +17,4 @@ public class Dropdown extends BaseElement {
         Select select = new Select(driver.findElement(locator));
         select.selectByValue(optionName);
     }
-
-    public void selectOptionByVisibleText(By locator, String optionName) {
-        log.info(String.format("selecting option %s", optionName));
-        Select select = new Select(driver.findElement(locator));
-        select.selectByVisibleText(optionName);
-    }
 }
