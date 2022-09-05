@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 @Log4j2
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
     private final static By USER_ICON = By.id("LayoutProfilePic");
     private final static By LOGOUT = By.xpath("//a[text()='Logout']");
     private final static By WORKOUTS_MENU_LOCATOR = By.xpath("//a[text()='Workouts']");

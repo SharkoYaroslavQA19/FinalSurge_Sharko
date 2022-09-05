@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @Log4j2
-public class BikeModal extends BaseModal {
+public class BikeModal extends BaseModal{
     private static final By BIKE_NAME = By.id("ShoeName");
     private static final By BIKE_BRAND = By.xpath("//*[@id='s2id_ShoeBrand']//span");
     private static final By BIKE_MODEL = By.id("ShoeModel");

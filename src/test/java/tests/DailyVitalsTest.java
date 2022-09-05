@@ -11,7 +11,7 @@ import pages.Modals.CustomViewModal;
 
 import static org.testng.Assert.assertEquals;
 
-public class DailyVitalsTest extends BaseTest {
+public class DailyVitalsTest extends BaseTest{
 
     DailyVitalsPage DailyVitalsPage;
     CustomViewModal CustomViewModal;

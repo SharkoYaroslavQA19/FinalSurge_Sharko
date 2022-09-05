@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Log4j2
-public abstract class  BaseModal {
+public abstract class  BaseModal{
 
     WebDriver driver;
     WebDriverWait wait;

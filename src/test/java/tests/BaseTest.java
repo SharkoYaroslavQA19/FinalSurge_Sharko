@@ -15,7 +15,7 @@ import pages.WorkoutsPage;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract class BaseTest {
+public abstract class BaseTest{
     protected final static String EMAIL = "yasharko@mail.ru";
     protected final static String PASSWORD = "Engine@45";
     protected WebDriver driver;

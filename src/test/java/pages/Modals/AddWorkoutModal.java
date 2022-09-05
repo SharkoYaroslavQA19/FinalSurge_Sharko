@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-public class AddWorkoutModal extends BaseModal{
+public class AddWorkoutModal extends BaseModal {
 
     private final static By TIME_OF_DAY=By.id("WorkoutTime");
     private final static By WORKOUT_NAME=By.id("Name");

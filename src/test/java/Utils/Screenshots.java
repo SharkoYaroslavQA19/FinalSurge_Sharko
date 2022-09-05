@@ -5,7 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public class   Screenshots {
+public class   Screenshots{
     @Attachment(value = "screenshot", type = "image/png")
     public static byte[] attachScreenshot(WebDriver driver) {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);

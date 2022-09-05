@@ -5,7 +5,7 @@ import models.Workout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class WorkoutDetailsPage extends BasePage{
+public class WorkoutDetailsPage extends BasePage {
     private static final By VIEW_YOUR_WORKOUT_TEXT= By.xpath("//span[text()='View and Edit your workout.']");
     private static final By ACTUAL_TIME = By.xpath("//div[@class='formSep']/div/small");
     private static final By ACTUAL_NAME = By.xpath("//span[@class='activityTypeName']/parent::div/following-sibling::div");

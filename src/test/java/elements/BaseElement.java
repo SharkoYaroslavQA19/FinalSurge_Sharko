@@ -6,7 +6,7 @@ public abstract class BaseElement {
 
     static WebDriver driver;
 
-    public BaseElement(WebDriver driver) {
+    public BaseElement (WebDriver driver) {
         BaseElement.driver = driver;
     }
 

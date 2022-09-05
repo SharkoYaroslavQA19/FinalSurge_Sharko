@@ -6,7 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 @Log4j2
-public class LoginPage extends BasePage {
+public class LoginPage extends BasePage{
 
     private final static String URL = "https://log.finalsurge.com/login.cshtml";
     private static final By EMAIL_INPUT = By.id("login_name");

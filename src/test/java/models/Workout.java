@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Workout {
+public class Workout{
     private String date;
     private String timeOfDay;
     private String workoutName;

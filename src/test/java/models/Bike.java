@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Bike {
+public class Bike{
     String bikeName;
     String model;
     String cost;

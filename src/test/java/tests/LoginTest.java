@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class LoginTest extends BaseTest {
+public class LoginTest extends BaseTest{
 
     @Test(groups={"smoke"},description = "authorization on the site")
     public void positiveLoginTest(){

@@ -17,7 +17,7 @@ public class DailyVitalsPage extends BasePage {
     }
 
     @Override
-    public void waitForPageLoaded() {
+    public void waitForPageLoaded(){
 
     }
 

@@ -10,7 +10,7 @@ import pages.Modals.AddWorkoutModal;
 import pages.WorkoutDetailsPage;
 import pages.WorkoutsPage;
 
-public class WorkoutsTest extends BaseTest {
+public class WorkoutsTest extends BaseTest{
     protected AddWorkoutModal AddWorkoutModal;
     protected pages.WorkoutsPage WorkoutsPage;
     protected pages.WorkoutDetailsPage WorkoutDetailsPage;

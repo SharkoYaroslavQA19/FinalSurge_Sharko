@@ -5,7 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 @Log4j2
-public class WorkoutsPage extends BasePage {
+public class WorkoutsPage extends BasePage{
     private final static By ACTIVITIES_SIDEBAR = By.cssSelector(".aw_sidebar");
     private final static By STRENGTH_TRAINING_BUTTON_LOCATOR = By.xpath("//a[@data-code='strength-t']");
 

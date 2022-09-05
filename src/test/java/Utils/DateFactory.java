@@ -36,4 +36,12 @@ public class DateFactory {
                 .endDate("9/25/2022")
                 .build();
     }
+
+    public static Report getReportInform() {
+        return Report.builder()
+                .startDate("9/05/2022")
+                .endDate("9/10/2022")
+                .activityType(ActiveType.STRENGTH_TRAINING)
+                .build();
+    }
 }

@@ -11,7 +11,7 @@ public class Input extends BaseElement{
         super(driver);
     }
 
-    public void write(By locator, String text) {
+    public void write (By locator, String text) {
         log.info(String.format("setting %s", text));
         driver.findElement(locator).sendKeys(text);
     }

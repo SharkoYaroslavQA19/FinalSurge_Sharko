@@ -4,7 +4,7 @@ import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LogOutTest extends BaseTest{
+public class LogOutTest extends BaseTest {
     protected String EXPECTED_MESSAGE="You have been successfully logged out of the system.";
 
     @Test(groups={"regression"},description = "Logout user")

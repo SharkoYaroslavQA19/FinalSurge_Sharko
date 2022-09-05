@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DatePeriod {
+public class DatePeriod{
     String startDate;
     String endDate;
 }

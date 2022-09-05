@@ -12,7 +12,7 @@ import pages.Modals.BikeModal;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class BikesTest extends BaseTest {
+public class BikesTest extends BaseTest{
 
     protected BikesPage BikesPage;
     protected BikeModal BikeModal;

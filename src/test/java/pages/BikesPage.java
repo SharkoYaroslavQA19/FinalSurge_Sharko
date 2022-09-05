@@ -42,7 +42,7 @@ public class BikesPage extends BasePage {
         return this;
     }
 
-    public void selectBikeBrand(String optionName) {
+    public void selectBikeBrand(String optionName){
         log.info(String.format("selecting bike brand option %s", optionName));
         driver.findElement(DROPDOWN_LOCATOR).click();
         WebElement optionToClick = driver.findElement(By.xpath(String.format(bikeBrandLocator, optionName)));

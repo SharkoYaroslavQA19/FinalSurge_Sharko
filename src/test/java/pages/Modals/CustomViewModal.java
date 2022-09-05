@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @Log4j2
-public class CustomViewModal extends BaseModal {
+public class CustomViewModal extends BaseModal{
 
     private static final By STARTING_DATE = By.id("CDateStart");
     private static final By ENDING_DATE = By.id("CDateEnd");

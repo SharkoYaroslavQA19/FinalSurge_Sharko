@@ -9,7 +9,7 @@ public class RadioButton extends BaseElement{
 
     private final String radioButtonLocator = "//input[@type='radio']//following-sibling::span[text()='%s']";
 
-    public RadioButton(WebDriver driver) {
+    public RadioButton (WebDriver driver) {
         super(driver);
     }
 
