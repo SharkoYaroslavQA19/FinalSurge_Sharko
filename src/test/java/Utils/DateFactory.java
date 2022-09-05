@@ -4,7 +4,7 @@ import com.github.javafaker.Faker;
 import enums.*;
 import models.*;
 
-public class TestDataHelper {
+public class DateFactory {
 
     static Faker faker = new Faker();
 
@@ -22,18 +22,18 @@ public class TestDataHelper {
     public static Bike getBikeWithAllData() {
         return Bike.builder()
                 .bikeName(faker.name().title())
-                .bikeBrand(BikeBrand.CUBE)
+                .bikeBrand(BikeBrand.BMC)
                 .model(String.valueOf(faker.number().randomNumber()))
-                .cost("500.75")
-                .date("1/20/2022")
+                .cost("600.00")
+                .date("11/20/2022")
                 .distance("60.15")
                 .build();
     }
 
     public static DatePeriod getDatePeriod() {
         return DatePeriod.builder()
-                .startDate("1/5/2022")
-                .endDate("1/19/2022")
+                .startDate("9/05/2022")
+                .endDate("9/25/2022")
                 .build();
     }
 }

@@ -1,6 +1,6 @@
 package tests;
 
-import Utils.TestDataHelper;
+import Utils.DateFactory;
 import io.qameta.allure.Description;
 import models.Workout;
 import org.testng.Assert;
@@ -31,9 +31,8 @@ public class WorkoutsTest extends BaseTest {
         HomePage.clickAddWorkout();
         Assert.assertTrue(WorkoutsPage.isPageOpened());
         WorkoutsPage.clickStrengthTrainingButton();
-        Workout strengthTraining= TestDataHelper.addStrengthTraining();
-        AddWorkoutModal.fillForm(strengthTraining)
-                .clickAddWorkoutButton();
+        Workout strengthTraining= DateFactory.addStrengthTraining();
+        AddWorkoutModal.fillForm(strengthTraining).clickAddWorkoutButton();
         Assert.assertEquals(strengthTraining,WorkoutDetailsPage.getAddedWorkoutDetails());
     }
 }

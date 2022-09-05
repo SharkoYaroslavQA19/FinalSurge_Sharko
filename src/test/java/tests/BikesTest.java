@@ -1,6 +1,6 @@
 package tests;
 
-import Utils.TestDataHelper;
+import Utils.DateFactory;
 import io.qameta.allure.Description;
 import models.Bike;
 import org.testng.annotations.BeforeMethod;
@@ -32,10 +32,8 @@ public class BikesTest extends BaseTest {
         HomePage.moveGearRoutesMenu();
         HomePage.clickBikes();
         assertTrue(BikesPage.isPageOpened());
-        Bike newBikeDetails = TestDataHelper.getBikeWithAllData();
-        BikesPage.fillForm(newBikeDetails)
-                .clickAddBikeButton()
-                .clickBikeName(newBikeDetails.getBikeName());
+        Bike newBikeDetails = DateFactory.getBikeWithAllData();
+        BikesPage.fillForm(newBikeDetails).clickAddBikeButton().clickBikeName(newBikeDetails.getBikeName());
         Bike actualBikeDetails = BikeModal.getBikeDetails();
         assertEquals(actualBikeDetails, newBikeDetails);
     }
