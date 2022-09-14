@@ -1,7 +1,6 @@
 package tests;
 
-import Utils.DateFactory;
-import io.qameta.allure.Description;
+import Utils.TestDataFactory;
 import models.DatePeriod;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -13,24 +12,26 @@ import static org.testng.Assert.assertEquals;
 
 public class DailyVitalsTest extends BaseTest{
 
-    DailyVitalsPage DailyVitalsPage;
-    CustomViewModal CustomViewModal;
+    DailyVitalsPage dailyVitalsPage;
+    CustomViewModal customViewModal;
 
     @BeforeMethod(alwaysRun = true)
     public void initialize() {
-        LoginPage.setEmailInput(EMAIL);
-        LoginPage.setPasswordInput(PASSWORD);
-        LoginPage.clickLoginButton();
-        Assert.assertTrue(HomePage.isUserIconDisplayed());
-        DailyVitalsPage = new DailyVitalsPage(driver);
-        CustomViewModal = new CustomViewModal(driver);
+        loginPage.setEmailInput(EMAIL);
+        loginPage.setPasswordInput(PASSWORD);
+        loginPage.clickLoginButton();
+        dailyVitalsPage = new DailyVitalsPage(driver);
+        customViewModal = new CustomViewModal(driver);
     }
 
-    @Test(groups = {"Regression"},description = "Displaying daily vitals for the selected time period")
+    @Test(groups = {"regression"},description = "Displaying daily vitals for the selected time period")
     public void viewVitalsTest() {
-        HomePage.clickViewAddVitals();
-        DatePeriod periodForView = DateFactory.getDatePeriod();
-        DailyVitalsPage.clickCustomView().fillForm(periodForView).clickViewButton();
-        assertEquals(DailyVitalsPage.getLastDateInTable(), periodForView.getEndDate());
+        Assert.assertTrue(homePage.isUserIconDisplayed());
+        homePage.clickViewAddVitals();
+        DatePeriod periodForView = TestDataFactory.getDatePeriod();
+        dailyVitalsPage.clickCustomView()
+                .fillForm(periodForView)
+                .clickViewButton();
+        assertEquals(dailyVitalsPage.getLastDateInTable(), periodForView.getEndDate());
     }
 }

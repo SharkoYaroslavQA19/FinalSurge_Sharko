@@ -9,19 +9,19 @@ public class LoginTest extends BaseTest{
 
     @Test(groups={"smoke"},description = "authorization on the site")
     public void positiveLoginTest(){
-        LoginPage.setEmailInput(EMAIL);
-        LoginPage.setPasswordInput(PASSWORD);
-        LoginPage.clickLoginButton();
-        Assert.assertTrue(HomePage.isUserIconDisplayed());
+        loginPage.setEmailInput(EMAIL);
+        loginPage.setPasswordInput(PASSWORD);
+        loginPage.clickLoginButton();
+        Assert.assertTrue(homePage.isUserIconDisplayed());
     }
 
     @Test(groups = {"negative"}, dataProvider = "getNegativeLoginData",description = "Authorization with incorrect email")
     public void negativeLoginTest(String email, String password,String errorMessage) {
-        LoginPage.setEmailInput(email);
-        LoginPage.setPasswordInput(password);
-        LoginPage.clickLoginButton();
-        Assert.assertTrue(LoginPage.isErrorMessageForEmailDisplayed());
-        Assert.assertEquals(LoginPage.getErrorMessageForEmailText(),errorMessage);
+        loginPage.setEmailInput(email);
+        loginPage.setPasswordInput(password);
+        loginPage.clickLoginButton();
+        Assert.assertTrue(loginPage.isErrorMessageForEmailDisplayed());
+        Assert.assertEquals(loginPage.getErrorMessageForEmailText(),errorMessage);
     }
 
     @DataProvider

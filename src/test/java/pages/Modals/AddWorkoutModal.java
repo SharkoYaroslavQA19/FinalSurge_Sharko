@@ -23,12 +23,13 @@ public class AddWorkoutModal extends BaseModal {
         super(driver);
     }
     public AddWorkoutModal fillForm(Workout workout){
-        new Input(driver).write(TIME_OF_DAY, workout.getTimeOfDay());
-        new Input(driver).write(WORKOUT_NAME, workout.getWorkoutName());
-        new Input(driver).write(WORKOUT_DESCRIPTION, workout.getWorkoutDescription());
-        new Input(driver).write(DURATION, workout.getDuration());
+        new Input(driver).setValue(TIME_OF_DAY, workout.getTimeOfDay());
+        new Input(driver).setValue(WORKOUT_NAME, workout.getWorkoutName());
+        new Input(driver).setValue(WORKOUT_DESCRIPTION, workout.getWorkoutDescription());
+        new Input(driver).setValue(DURATION, workout.getDuration());
         new RadioButton(driver).clickRadioButton(workout.getFeelingWhileTraining().getName());
         new Dropdown(driver).selectOptionByValue(PERCEIVED_EFFORT,workout.getPerceivedEffort().getValue());
+        Screenshots.attachScreenshot(driver);
         return this;
     }
     public void clickAddWorkoutButton(){

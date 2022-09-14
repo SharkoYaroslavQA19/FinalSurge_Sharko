@@ -1,5 +1,6 @@
 package pages.Modals;
 
+import Utils.Screenshots;
 import elements.Input;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
@@ -21,9 +22,10 @@ public class CustomViewModal extends BaseModal{
     @Step("Filling 'Custom View' form")
     public CustomViewModal fillForm(DatePeriod customView) {
         new Input(driver).clear(STARTING_DATE);
-        new Input(driver).write(STARTING_DATE, customView.getStartDate());
+        new Input(driver).setValue(STARTING_DATE, customView.getStartDate());
         new Input(driver).clear(ENDING_DATE);
-        new Input(driver).write(ENDING_DATE, customView.getEndDate());
+        new Input(driver).setValue(ENDING_DATE, customView.getEndDate());
+        Screenshots.attachScreenshot(driver);
         return this;
     }
 

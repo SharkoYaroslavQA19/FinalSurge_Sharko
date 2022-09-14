@@ -9,11 +9,11 @@ public class LogOutTest extends BaseTest {
 
     @Test(groups={"regression"},description = "Logout user")
     public void logOutTest(){
-        LoginPage.setEmailInput(EMAIL);
-        LoginPage.setPasswordInput(PASSWORD);
-        LoginPage.clickLoginButton();
-        Assert.assertTrue(HomePage.isUserIconDisplayed());
-        HomePage.clickLogOutButton();
-        Assert.assertEquals(LoginPage.getLogoutMessage(),EXPECTED_MESSAGE);
+        loginPage.setEmailInput(EMAIL);
+        loginPage.setPasswordInput(PASSWORD);
+        loginPage.clickLoginButton();
+        Assert.assertTrue(homePage.isUserIconDisplayed());
+        homePage.clickLogOutButton();
+        Assert.assertEquals(loginPage.getLogoutMessage(),EXPECTED_MESSAGE);
     }
 }

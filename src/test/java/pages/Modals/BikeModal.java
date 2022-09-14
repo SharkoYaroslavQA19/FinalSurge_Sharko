@@ -1,5 +1,6 @@
 package pages.Modals;
 
+import Utils.Screenshots;
 import enums.BikeBrand;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
@@ -31,6 +32,7 @@ public class BikeModal extends BaseModal{
         bike.setCost(getValue(BIKE_COST));
         bike.setDate(getValue(DATE));
         bike.setDistance(getValue(DISTANCE));
+        Screenshots.attachScreenshot(driver);
         return bike;
     }
 

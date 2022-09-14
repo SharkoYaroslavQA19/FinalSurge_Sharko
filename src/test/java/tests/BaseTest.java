@@ -9,9 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
-import pages.LoginPage;
-import pages.WorkoutDetailsPage;
-import pages.WorkoutsPage;
+import pages.LoginPage;;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,8 +17,8 @@ public abstract class BaseTest{
     protected final static String EMAIL = "yasharko@mail.ru";
     protected final static String PASSWORD = "Engine@45";
     protected WebDriver driver;
-    protected LoginPage LoginPage;
-    protected HomePage HomePage;
+    protected LoginPage loginPage;
+    protected HomePage homePage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(ITestContext testContext) throws Exception {
@@ -30,14 +28,14 @@ public abstract class BaseTest{
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         testContext.setAttribute("driver", driver);
-        LoginPage = new LoginPage(driver);
-        HomePage = new HomePage (driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage (driver);
 
     }
 
     @BeforeMethod(alwaysRun = true)
     public void navigate() {
-        LoginPage.open();
+        loginPage.open();
     }
 
     @AfterMethod(alwaysRun = true)

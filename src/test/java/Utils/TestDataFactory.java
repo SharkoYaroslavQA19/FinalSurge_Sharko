@@ -4,7 +4,7 @@ import com.github.javafaker.Faker;
 import enums.*;
 import models.*;
 
-public class DateFactory {
+public class TestDataFactory {
 
     static Faker faker = new Faker();
 
@@ -40,8 +40,31 @@ public class DateFactory {
     public static Report getReportInform() {
         return Report.builder()
                 .startDate("9/05/2022")
-                .endDate("9/10/2022")
+                .endDate("9/15/2022")
                 .activityType(ActiveType.STRENGTH_TRAINING)
+                .build();
+    }
+
+    public static WorkoutCalculator getIntesityInform() {
+        return WorkoutCalculator.builder()
+                .event(Event.MARATHON)
+                .hours(String.valueOf(faker.number().numberBetween(1,8)))
+                .minutes(String.valueOf(faker.number().numberBetween(1, 10)))
+                .seconds(String.valueOf(faker.number().numberBetween(1, 59)))
+                .build();
+    }
+
+    public static WorkoutCalculator getHansonsInform() {
+        return WorkoutCalculator.builder()
+                .event(Event.MARATHON)
+                .hours(String.valueOf(faker.number().numberBetween(1, 8)))
+                .minutes(String.valueOf(faker.number().numberBetween(1, 10)))
+                .seconds(String.valueOf(faker.number().numberBetween(1, 59)))
+                .temperature(String.valueOf(faker.number().numberBetween(-20, 35)))
+                .temperatureType(TemperatureType.C)
+                .humidity(String.valueOf(faker.number().numberBetween(0, 50)))
+                .windSpeed(String.valueOf(faker.number().numberBetween(0, 50)))
+                .windSpeedType(WindSpeedType.KPH)
                 .build();
     }
 }

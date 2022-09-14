@@ -1,7 +1,6 @@
 package tests;
 
-import Utils.DateFactory;
-import io.qameta.allure.Description;
+import Utils.TestDataFactory;
 import models.Bike;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -14,28 +13,30 @@ import static org.testng.Assert.assertTrue;
 
 public class BikesTest extends BaseTest{
 
-    protected BikesPage BikesPage;
-    protected BikeModal BikeModal;
+    protected BikesPage bikesPage;
+    protected BikeModal bikeModal;
 
     @BeforeMethod(alwaysRun = true)
     public void initialize() {
-        LoginPage.setEmailInput(EMAIL);
-        LoginPage.setPasswordInput(PASSWORD);
-        LoginPage.clickLoginButton();
-        Assert.assertTrue(HomePage.isUserIconDisplayed());
-        BikesPage = new BikesPage(driver);
-        BikeModal = new BikeModal(driver);
+        loginPage.setEmailInput(EMAIL);
+        loginPage.setPasswordInput(PASSWORD);
+        loginPage.clickLoginButton();
+        bikeModal = new BikeModal(driver);
+        bikesPage = new BikesPage(driver);
     }
 
 
-    @Test(groups = {"Smoke"},description = "Adding 'New bike' equipment and verifying equipment details")
+    @Test(groups = {"regression"},description = "Adding 'New bike' equipment and verifying equipment details")
     public void addNewBikeTest() {
-        HomePage.moveGearRoutesMenu();
-        HomePage.clickBikes();
-        assertTrue(BikesPage.isPageOpened());
-        Bike newBikeDetails = DateFactory.getBikeWithAllData();
-        BikesPage.fillForm(newBikeDetails).clickAddBikeButton().clickBikeName(newBikeDetails.getBikeName());
-        Bike actualBikeDetails = BikeModal.getBikeDetails();
+        Assert.assertTrue(homePage.isUserIconDisplayed());
+        homePage.moveGearRoutesMenu();
+        homePage.clickBikes();
+        assertTrue(bikesPage.isPageOpened());
+        Bike newBikeDetails = TestDataFactory.getBikeWithAllData();
+        bikesPage.fillForm(newBikeDetails)
+                .clickAddBikeButton()
+                .clickBikeName(newBikeDetails.getBikeName());
+        Bike actualBikeDetails = bikeModal.getBikeDetails();
         assertEquals(actualBikeDetails, newBikeDetails);
     }
 }

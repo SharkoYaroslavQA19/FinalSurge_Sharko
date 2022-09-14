@@ -32,13 +32,13 @@ public class BikesPage extends BasePage {
 
     @Step("Filling 'New Bike' form")
     public BikesPage fillForm(Bike bike) {
-        new Input(driver).write(BIKE_NAME, bike.getBikeName());
+        new Input(driver).setValue(BIKE_NAME, bike.getBikeName());
         selectBikeBrand(bike.getBikeBrand().getName());
-        new Input(driver).write(BIKE_MODEL, bike.getModel());
-        new Input(driver).write(BIKE_COST, bike.getCost());
-        new Input(driver).write(DATE, bike.getDate());
+        new Input(driver).setValue(BIKE_MODEL, bike.getModel());
+        new Input(driver).setValue(BIKE_COST, bike.getCost());
+        new Input(driver).setValue(DATE, bike.getDate());
         new Input(driver).clear(DISTANCE);
-        new Input(driver).write(DISTANCE, bike.getDistance());
+        new Input(driver).setValue(DISTANCE, bike.getDistance());
         return this;
     }
 
