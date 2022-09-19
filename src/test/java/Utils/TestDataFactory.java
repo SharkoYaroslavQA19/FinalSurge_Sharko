@@ -67,4 +67,27 @@ public class TestDataFactory {
                 .windSpeedType(WindSpeedType.KPH)
                 .build();
     }
+
+    public static CaloricNeeds getCaloricNeedInform() {
+        return CaloricNeeds.builder()
+                .weightType(WeightType.KG)
+                .heightType(HeightType.CENTIMETERS)
+                .genderType(GenderType.MALE)
+                .distTypeForCalculator(DistTypeForCalculator.KILOMETERS)
+                .weight(String.valueOf(faker.number().numberBetween(30, 500)))
+                .height(String.valueOf(faker.number().numberBetween(60, 240)))
+                .age(String.valueOf(faker.number().numberBetween(5, 99)))
+                .distance(String.valueOf(faker.number().numberBetween(1, 500)))
+                .build();
+    }
+
+    public static PaceCalculator getPaceCalculatorInform() {
+        return PaceCalculator.builder()
+                .distanceType(DistanceType.KM)
+                .distance(String.valueOf(faker.number().numberBetween(1, 9999)))
+                .hours(String.valueOf(faker.number().numberBetween(0, 99)))
+                .minutes(String.valueOf(faker.number().numberBetween(1, 59)))
+                .seconds(String.valueOf(faker.number().numberBetween(1, 59)))
+                .build();
+    }
 }

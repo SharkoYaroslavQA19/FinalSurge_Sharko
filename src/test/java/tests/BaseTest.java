@@ -1,6 +1,7 @@
 package tests;
 
 import Utils.DriverFactory;
+import Utils.PropertyReader;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -14,15 +15,15 @@ import pages.LoginPage;;
 import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest{
-    protected final static String EMAIL = "yasharko@mail.ru";
-    protected final static String PASSWORD = "Engine@45";
+    protected final static String EMAIL = System.getenv().getOrDefault("EMAIL", PropertyReader.getProperty("finalSurge.email"));
+    protected final static String PASSWORD = System.getenv().getOrDefault("PASSWORD", PropertyReader.getProperty("finalSurge.password"));
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected HomePage homePage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(ITestContext testContext) throws Exception {
-        String browserName = System.getProperty("browser", "chrome");
+        String browserName = System.getProperty("browser", "firefox");
         driver = DriverFactory.getDriver(browserName);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);

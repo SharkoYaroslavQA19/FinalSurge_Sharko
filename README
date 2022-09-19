@@ -41,4 +41,4 @@ mvn -DsuiteXmlFile=negativeTest.xml test
 
 
 To run all tests, run the command
-mvn clean test or mvn -DsuiteXmlFile=allTests.xml test
+mvn clean test or mvn -DsuiteXmlFile=allTest.xml test
