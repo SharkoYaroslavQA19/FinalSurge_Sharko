@@ -1,0 +1,44 @@
+Finalsurge.com - is a learning platform for athletes and coaches.
+Providing free training courses for all types of athletes. This platform allows you to track and import workouts to
+fitness devices, save and analyze the results.
+
+
+Libraries, frameworks used in project:
+
+-Selenium version 3.141.59;
+-TestNG version 7.6.0;
+-Log4j-core version 2.18.0;
+-Allure-testng version 2.18.1;
+-Lombok version 1.18.24;
+-Javafaker version 1.0.2
+
+Setting up config:
+
+-Clone this repository.
+-Enter email, password and URL in config.properties
+
+
+Checklist for tests
+1. Checking authorization on the site.
+2. Checking for incorrect data entry (login, password)
+3. Checking to exit the site (unlogging the user)
+4. Checking for the creation of a training, with filling in the form with data and saving.
+5. Checking the print report for the created user training.
+6. Checking the performance of the selection for the entered period of indicators entered by the user.
+7. Adding a workout using equipment and filling out a form.
+8. Checking the performance of the calculator for calculating the intensity for running.
+9. Checking the efficiency of the calculator for counting calories and pace.
+
+The test suites consist of:
+-regressionTest
+-negativeTest
+-smokeTest
+To run a separate set of tests, you need to run the command
+mvn -DsuiteXmlFile=smokeTest.xml test
+mvn -DsuiteXmlFile=regressionTest.xml test
+mvn -DsuiteXmlFile=negativeTest.xml test
+
+
+
+To run all tests, run the command
+mvn clean test or mvn -DsuiteXmlFile=allTests.xml test
