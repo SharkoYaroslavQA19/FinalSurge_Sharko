@@ -1,5 +1,6 @@
 package pages;
 
+import Utils.PropertyReader;
 import Utils.Screenshots;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
@@ -8,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 @Log4j2
 public class LoginPage extends BasePage{
 
-    private final static String URL = "https://log.finalsurge.com/login.cshtml";
+    private final static String URL = System.getenv().getOrDefault("URL", PropertyReader.getProperty("finalSurge.url"));
     private static final By EMAIL_INPUT = By.id("login_name");
     private static final By PASSWORD_INPUT = By.id("login_password");
     private static final By LOGIN_BUTTON = By.xpath("//button[text()='Login']");

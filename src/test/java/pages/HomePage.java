@@ -21,6 +21,7 @@ public class HomePage extends BasePage {
     private static final By REPORTS_STATISTICS_LINK = By.xpath("//a[text()='Reports & Statistics']");
     private static final By PRINT_WORKOUTS_LINK = By.xpath("//a[text()='Print Workouts']");
     private static final By WORKOUT_CALCULATORS_LINK = By.cssSelector("[data-reveal-id='IntensityCalc']");
+    private static final By OTHER_CALCULATORS_LINK = By.cssSelector("[data-reveal-id='OtherCalc']");
     Actions action = new Actions(driver);
     public HomePage(WebDriver driver) {
         super(driver);
@@ -119,5 +120,11 @@ public class HomePage extends BasePage {
         log.info("clicking 'Workout Calculators' link");
         clickButton(WORKOUT_CALCULATORS_LINK);
         return new IntensityCalculatorModal(driver);
+    }
+
+    @Step("Clicking 'Other Calculators' link")
+    public void clickOtherCalculators() {
+        log.info("clicking 'Other Calculators' link");
+        clickButton(OTHER_CALCULATORS_LINK);
     }
 }
