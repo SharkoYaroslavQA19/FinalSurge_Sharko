@@ -33,6 +33,7 @@ The test suites consist of:
 -regressionTest
 -negativeTest
 -smokeTest
+-allTest
 To run a separate set of tests, you need to run the command
 mvn -DsuiteXmlFile=smokeTest.xml test
 mvn -DsuiteXmlFile=regressionTest.xml test
